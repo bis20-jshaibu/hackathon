@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics Pro - Client Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; 
+            color: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+        .container-main {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            width: 100%; 
+        }
+        @media (min-width: 640px) {
+            .container-main {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .container-main {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .card {
+                padding: 2rem;
+            }
+        }
+
+        .section-heading-portal {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #374151; 
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-primary-portal {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            background-color: #c9c9cf; 
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            border: none; 
+            cursor: pointer;
+        }
+        .btn-primary-portal:hover {
+            background-color: #b8860b; 
+        }
+
+        .btn-secondary-portal {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            background-color: #ffffff;
+            color: #9898a1;
+            border: 1px solid #d4af37; 
+            font-weight: 600;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .btn-secondary-portal:hover {
+            background-color: #f0f4f8; 
+        }
+
+        .nav-link-portal {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem; 
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-radius: 0.5rem;
+            color: #475569; 
+            transition: background-color 200ms, color 200ms;
+            text-decoration: none; 
+        }
+        .nav-link-portal:hover {
+            background-color: #e2e8f0; 
+            color: #374151; 
+        }
+
+        .nav-link-portal.active {
+            background-color: #d4af37; 
+            color: #ffffff;
+        }
+        .nav-link-portal.active:hover {
+            background-color: #b8860b; 
+        }
+
+        .header-portal {
+            background-color: #334155; 
+            color: white;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; 
+        }
+        .header-logo i {
+            color: #fbbf24; 
+            font-size: 1.5rem; 
+        }
+        .header-logo span {
+            font-size: 1.25rem; 
+            font-weight: 700; 
+        }
+        .header-user-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem; 
+        }
+        .header-user-actions span {
+            color: #cbd5e1; 
+        }
+        .header-user-actions .btn-secondary-portal {
+            background-color: #b8860b !important; 
+            color: white !important;
+            border: none; 
+        }
+        .header-user-actions .btn-secondary-portal:hover {
+            background-color: #a07a09 !important; 
+        }
+        .header-user-actions .btn-secondary-portal i {
+            margin-right: 0.5rem;
+        }
+
+        .main-content-area {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 2rem; 
+        }
+        @media (min-width: 1024px) { 
+            .main-content-area {
+                grid-template-columns: 1fr 3fr; 
+            }
+        }
+
+        .sidebar-nav-container {
+            grid-column: span 1; 
+        }
+        .sidebar-nav-card {
+            padding: 1rem; 
+        }
+        .sidebar-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem; 
+        }
+
+        .main-content-panel {
+            grid-column: span 1; 
+        }
+        .dashboard-overview-card {
+            margin-bottom: 2rem; 
+        }
+        .dashboard-stats-grid {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 1.5rem; 
+            text-align: center;
+        }
+        @media (min-width: 768px) { 
+            .dashboard-stats-grid {
+                grid-template-columns: repeat(3, 1fr); 
+            }
+        }
+        .dashboard-stat-item {
+            padding: 1.5rem; 
+            border-radius: 0.5rem; 
+        }
+        .dashboard-stat-item p:first-child {
+            font-size: 2.25rem; 
+            font-weight: 700; 
+        }
+        .dashboard-stat-item p:last-child {
+            color: #4a5568; 
+            margin-top: 0.5rem; 
+        }
+        .bg-gray-100-custom {
+            background-color: #f7fafc; 
+        }
+        .text-amber-600-custom {
+            color: #d4af37; 
+        }
+        .text-emerald-600-custom {
+            color: #059669; 
+        }
+        .bg-emerald-50-custom {
+            background-color: #ecfdf5; 
+        }
+        .text-orange-600-custom {
+            color: #ea580c; 
+        }
+        .bg-orange-50-custom {
+            background-color: #fff7ed; 
+        }
+
+        .recent-shipments-heading {
+            font-size: 1.25rem; 
+            font-weight: 700; 
+            color: #4a5568; 
+            margin-top: 2rem; 
+            margin-bottom: 1rem; 
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            min-width: 100%;
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            border-collapse: collapse; 
+        }
+        table thead {
+            background-color: #334155; 
+            color: white;
+        }
+        table th {
+            padding: 0.75rem 1rem; 
+            text-align: left;
+        }
+        table tbody tr {
+            border-bottom: 1px solid #e2e8f0; 
+        }
+        table tbody tr:hover {
+            background-color: #f8f8f8; 
+        }
+        table td {
+            padding: 0.75rem 1rem; 
+        }
+        table td.text-orange-600-custom {
+            color: #ea580c; 
+            font-weight: 500; 
+        }
+        table td.text-emerald-600-custom {
+            color: #059669; 
+            font-weight: 500; 
+        }
+        table td.text-amber-600-custom {
+            color: #d4af37; 
+            font-weight: 500; 
+        }
+
+        .quick-actions-grid {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 1.5rem; 
+        }
+        @media (min-width: 640px) { 
+            .quick-actions-grid {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+        }
+        @media (min-width: 1024px) { 
+            .quick-actions-grid {
+                grid-template-columns: repeat(3, 1fr); 
+            }
+        }
+        .quick-actions-grid button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem; 
+            width: 100%; 
+        }
+
+        .footer-portal {
+            background-color: #334155; 
+            color: white;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            text-align: center;
+            font-size: 0.875rem; 
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Header for Client Portal -->
+    <header class="header-portal">
+        <div class="container-main header-content">
+            <div class="header-logo">
+                <i class="fas fa-truck-fast"></i>
+                <span>Client Portal</span>
+            </div>
+            <div class="header-user-actions">
+                <span>Welcome</span>
+                <a href="/hackathon/index.html" class="btn-secondary-portal">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content-area container-main">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-nav-container">
+            <div class="card sidebar-nav-card">
+                <nav class="sidebar-nav-list">
+                    <a href="#" class="nav-link-portal active">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="track.html" class="nav-link-portal">
+                        <i class="fas fa-truck-loading"></i>
+                        <span>Track Shipments</span>
+                    </a>
+                    <a href="#" class="nav-link-portal">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Order Management</span>
+                    </a>
+                    <a href="#" class="nav-link-portal">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Documents & Reports</span>
+                    </a>
+                    <a href="#" class="nav-link-portal">
+                        <i class="fas fa-user-circle"></i>
+                        <span>My Profile</span>
+                    </a>
+                    <a href="support.html" class="nav-link-portal">
+                        <i class="fas fa-headset"></i>
+                        <span>Support</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content Panel -->
+        <section class="main-content-panel">
+            <!-- Dashboard Overview -->
+            <div class="card dashboard-overview-card">
+                <h2 class="section-heading-portal">Dashboard Overview</h2>
+                <div class="dashboard-stats-grid">
+                    <div class="bg-gray-100-custom dashboard-stat-item">
+                        <p class="text-amber-600-custom">5</p> 
+                        <p>Active Shipments</p>
+                    </div>
+                    <div class="bg-emerald-50-custom dashboard-stat-item">
+                        <p class="text-emerald-600-custom">2</p>
+                        <p>Delivered This Week</p>
+                    </div>
+                    <div class="bg-orange-50-custom dashboard-stat-item">
+                        <p class="text-orange-600-custom">1</p>
+                        <p>Pending Action</p>
+                    </div>
+                </div>
+
+                <h3 class="recent-shipments-heading">Recent Shipments</h3> 
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tracking ID</th>
+                                <th>Status</th>
+                                <th>Origin</th>
+                                <th>Destination</th>
+                                <th>Est. Delivery</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LP-2024-001</td>
+                                <td class="text-orange-600-custom">In Transit</td>
+                                <td>Blantyre</td>
+                                <td>Mzuzu</td>
+                                <td>Jul 01, 2025</td>
+                            </tr>
+                            <tr>
+                                <td>LP-2024-002</td>
+                                <td class="text-emerald-600-custom">Delivered</td>
+                                <td>Lilongwe</td>
+                                <td>Zomba</td>
+                                <td>Jun 22, 2025</td>
+                            </tr>
+                            <tr>
+                                <td>LP-2024-003</td>
+                                <td class="text-amber-600-custom">Processing</td> 
+                                <td>Blantyre</td>
+                                <td>Salima</td>
+                                <td>Jul 05, 2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="card">
+                <h2 class="section-heading-portal">Quick Actions</h2>
+                <div class="quick-actions-grid">
+                    <a href="booking.html" class="btn-primary-portal" style="text-decoration: none; text-align: center;">
+  <i class="fas fa-calendar-check"></i>
+  <span>Book Shipment</span>
+</a>
+
+                    <button class="btn-primary-portal">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>New Shipment</span>
+                    </button>
+                    <button class="btn-primary-portal">
+                        <i class="fas fa-file-download"></i>
+                        <span>Download Report</span>
+                    </button>
+                    <button class="btn-primary-portal">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Get Support</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer for Client Portal (simplified) -->
+    <footer class="footer-portal">
+        <p>&copy; SwiftMove Logistics Pro. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftMove - Track & Trace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" /> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding-top: 56px; 
+            background-color: #525050;
+            color: #333;
+            background-image: url('/images/web1.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .navbar {
+            background-color: transparent !important;
+            z-index: 10;
+        }
+        
+        .services {
+            background: url('images/web0.png') no-repeat center center/cover;
+            min-height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        /* Styles from Shipping Guides Page */
+        .shipping-guides-content {
+            flex-grow: 1;
+            padding-top: 2rem; /* Adjusted from 6rem to avoid overlap with fixed navbar */
+            padding-bottom: 2rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .shipping-guides-content-inner {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .shipping-guides-content-inner h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            text-align: center;
+            color: #1a202c;
+            margin-bottom: 2rem;
+        }
+        .shipping-guides-intro-paragraph {
+            font-size: 1.125rem;
+            color: #4a5568;
+            text-align: center;
+            margin-bottom: 3rem;
+            line-height: 1.625;
+        }
+        .shipping-guides-section {
+            margin-bottom: 4rem;
+        }
+        .shipping-guides-section h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #fbbf24;
+            padding-bottom: 0.5rem;
+        }
+        .shipping-guides-section > p {
+            color: #4a5568;
+            margin-bottom: 2rem;
+        }
+        .shipping-guides-item-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .shipping-guides-item {
+            background-color: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        .shipping-guides-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+        }
+        .shipping-guides-item p {
+            color: #4a5568;
+        }
+        .shipping-guides-bottom-note {
+            text-align: center;
+            color: #a0aec0;
+            margin-top: 3rem;
+            font-size: 0.875rem;
+        }
+        .shipping-guides-bottom-note a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .shipping-guides-bottom-note a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white" href="#">SwiftMove</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/hackathon/index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/hackathon/index.html#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#shipping-guides">Shipping Guides</a>
+                    </li>
+                </ul>
+            </div>
+            <a href="/hackathon/login.html" class="btn btn-sm btn-register ms-auto d-none d-lg-inline">Sign In / Register</a>
+        </div>
+    </nav>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 text-center bg-light">
+        <div class="container">
+            <h2 class="fw-bold text-dark">More details</h2>
+            <div class="gold-line mb-4"></div>
+            <div class="row g-4">
+
+                <!-- Service Card 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Operation Hours</h5>
+                            <p class="card-text">Our offices are open from Monday - Sunday.</p>
+                            <p class="card-text"> Monday - Friday => 8:00am to 6:00pm</p>
+                            <p class="card-text">Saturday => 9:00am to 4:00pm</p>
+                            <p class="card-text">Sunday => 2:00pm to 5:00pm</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Our Mission</h5>
+                            <p class="card-text">To be the leading logistics partner in Malawi, seamlessly connecting businesses and individuals to their destinations with speed, reliability, and unparalleled customer service. We leverage innovative solutions and a dedicated team to deliver your goods safely and efficiently, every time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Service Areas</h5>
+                            <p class="card-text">Blantyre - headquarters</p>
+                            <p class="card-text">Lilongwe - mobile (265) 898 923 456</p>
+                            <p class="card-text">Mzuzu - mobile (265) 999 000 787</p>
+                            <p class="card-text">Zomba - mobile (265) 888 898 000</p>
+                            <p class="card-text">Salima - mobile (265) 888 675 232 </p>
+                            <p class="card-text">Karonga - mobile (265) 999 870 123</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Shipping Guides Section -->
+    <section id="shipping-guides" class="shipping-guides-content">
+        <div class="shipping-guides-content-inner">
+            <h1>SwiftMove Shipping Guides</h1>
+
+            <p class="shipping-guides-intro-paragraph">
+                Welcome to our comprehensive shipping guides! Here, you'll find valuable information and best practices to ensure your packages are prepared correctly and arrive safely at their destination.
+            </p>
+
+            <!-- Guide Sections -->
+            <section class="shipping-guides-section">
+                <h2>1. Packaging Your Items</h2>
+                <p>Proper packaging is crucial for protecting your goods during transit. Follow these guidelines:</p>
+
+                <div class="shipping-guides-item-container">
+                    <div class="shipping-guides-item">
+                        <h3>Choose the Right Box</h3>
+                        <p>Use a sturdy, new cardboard box appropriate for the weight and size of your item. Avoid using damaged or old boxes, as their structural integrity may be compromised.</p>
+                    </div>
+                    <div class="shipping-guides-item">
+                        <h3>Internal Cushioning</h3>
+                        <p>Use ample cushioning materials like bubble wrap, foam peanuts, or crumpled paper to fill all empty spaces and prevent items from shifting. Fragile items may require double-boxing.</p>
+                    </div>
+                    <div class="shipping-guides-item">
+                        <h3>Sealing the Package</h3>
+                        <p>Use strong packing tape (at least 2 inches wide) to seal all seams and flaps of the box. Apply tape generously across all openings to ensure it remains closed.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="shipping-guides-section">
+                <h2>2. Labeling Your Shipment</h2>
+                <p>Clear and accurate labeling is essential for smooth delivery:</p>
+
+                <div class="shipping-guides-item-container">
+                    <div class="shipping-guides-item">
+                        <h3>Address Information</h3>
+                        <p>Clearly write or print the sender's and recipient's full names, addresses, and phone numbers. Include apartment or suite numbers if applicable.</p>
+                    </div>
+                    <div class="shipping-guides-item">
+                        <h3>Placement of Labels</h3>
+                        <p>Affix shipping labels securely on the largest surface of the package, avoiding seams or corners. Ensure barcodes are flat and scannable.</p>
+                    </div>
+                    <div class="shipping-guides-item">
+                        <h3>Special Handling</h3>
+                        <p>If your package requires special handling (e.g., "Fragile," "This Way Up"), clearly mark it on multiple sides with appropriate stickers or labels.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="shipping-guides-section">
+                <h2>3. Customs and International Shipping</h2>
+                <p>Shipping internationally involves additional considerations:</p>
+
+                <div class="shipping-guides-item-container">
+                    <div class="shipping-guides-item">
+                        <h3>Customs Declarations</h3>
+                        <p>Accurately declare the contents and value of your shipment on customs forms. Misdeclarations can lead to delays or penalties.</p>
+                    </div>
+                    <div class="shipping-guides-item">
+                        <h3>Prohibited Items</h3>
+                        <p>Be aware of items prohibited or restricted by the destination country. Check our <a href="#" style="color: #2563eb; text-decoration: none;">Prohibited Items List</a> or contact us for details.</p>
+                    </div>
+                    <div class="shipping-guides-item">
+                        <h3>Duties and Taxes</h3>
+                        <p>Recipient countries may levy duties and taxes. Familiarize yourself with potential charges, as they are typically the recipient's responsibility.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="shipping-guides-section">
+                <h2>4. Hazardous Materials</h2>
+                <p>Shipping hazardous materials requires strict adherence to regulations:</p>
+
+                <div class="shipping-guides-item-container">
+                    <div class="shipping-guides-item">
+                        <h3>Identification and Classification</h3>
+                        <p>Properly identify and classify hazardous materials according to international standards (e.g., UN numbers, proper shipping names).</p>
+                    </div>
+                    <div class="shipping-guides-item">
+                        <h3>Special Packaging and Labeling</h3>
+                        <p>Hazardous materials require specific packaging, labeling, and documentation. Consult our team for detailed instructions.</p>
+                    </div>
+                    <div class="shipping-guides-item">
+                        <h3>Compliance and Training</h3>
+                        <p>Ensure all personnel involved in shipping hazardous materials are properly trained and adhere to all relevant safety and regulatory guidelines.</p>
+                    </div>
+                </div>
+            </section>
+
+            <p class="shipping-guides-bottom-note">
+                For further assistance or specific inquiries, please visit our <a href="support.html" style="color: #2563eb; text-decoration: none;">Support Page</a> or contact our customer service team.
+            </p>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="container">
+            <div class="grid">
+                <!-- Contact Us Section -->
+                <div>
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>
+                            <!-- Placeholder for Location Icon -->
+                            <img src="images/web8.jfif" alt="Location Icon" width="24" height="24">
+                            <span>Victoria Avenue, Blantyre.</span>
+                        </li>
+                        <li>
+                            <!-- Placeholder for Phone Icon -->
+                            <img src="images/web7.png" alt="Phone Icon" width="24" height="24">
+                            <span>(+265) 123-4567-555</span>
+                        </li>
+                        <li>
+                            <!-- Placeholder for Email Icon -->
+                            <img src="images/web9.png" alt="Email Icon" width="24" height="24">
+                            <span>info@SwiftMove.org</span>
+                        </li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#">
+                            <!-- Placeholder for Facebook Icon -->
+                            <img src="images/web4.png" alt="Facebook Icon" width="24" height="24">
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                        <a href="#">
+                            <!-- Placeholder for Instagram Icon -->
+                            <img src="images/web6.jfif" alt="Instagram Icon" width="24" height="24">
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a href="#">
+                            <!-- Placeholder for Twitter Icon -->
+                            <img src="images/web5.png" alt="Twitter Icon" width="24" height="24">
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Resources Section -->
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        
+                        <li><a href="#">Service Areas</a></li>
+                        <li><a href="#">Company Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Get Involved Section -->
+                <div>
+                    <h3>Get Involved</h3>
+                    <ul>
+                        <li><a href="#">Partnership Programs</a></li>
+                        <li><a href="#">Global Network</a></li>
+                        <li><a href="#">Client Testimonials</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/index.html">About Us</a></li>
+                        <li><a href="/services.html">Our Mission & Values</a></li>
+                        <li><a href="/services.html">Operating Hours</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

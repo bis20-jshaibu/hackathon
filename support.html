@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftMove - Support</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top w-full py-4 shadow-md">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a class="text-white text-2xl font-bold rounded-md px-3 py-2" href="index.html">SwiftMove</a>
+            <button class="lg:hidden text-white focus:outline-none" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <div class="hidden lg:flex space-x-8" id="mainNav">
+                <a class="nav-link text-lg hover:text-yellow-400 transition duration-300 rounded-md px-3 py-2" href="index.html#hero">Home</a>
+                <a class="nav-link text-lg hover:text-yellow-400 transition duration-300 rounded-md px-3 py-2" href="index.html#about">About Us</a>
+                <a class="nav-link text-lg hover:text-yellow-400 transition duration-300 rounded-md px-3 py-2" href="index.html#services">Services</a>
+                <a class="nav-link text-lg hover:text-yellow-400 transition duration-300 rounded-md px-3 py-2" href="index.html#contact">Contact</a>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden bg-gray-800 py-4" id="mobileNav">
+            <a class="block text-white text-lg px-4 py-2 hover:bg-gray-700" href="index.html#hero">Home</a>
+            <a class="block text-white text-lg px-4 py-2 hover:bg-gray-700" href="index.html#about">About Us</a>
+            <a class="block text-white text-lg px-4 py-2 hover:bg-gray-700" href="index.html#services">Services</a>
+            <a class="block text-white text-lg px-4 py-2 hover:bg-gray-700" href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Support Content -->
+    <main class="flex-grow pt-24 pb-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto bg-white p-8 rounded-lg shadow-xl">
+            <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-8">SwiftMove Support</h1>
+
+            <p class="text-lg text-gray-700 text-center mb-12 leading-relaxed">
+                We're here to help! Whether you have a question about your shipment, need assistance with our services, or just want to provide feedback, our team is ready to assist you.
+            </p>
+
+            <!-- FAQs Section -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-yellow-500 pb-2">Frequently Asked Questions</h2>
+                <p class="text-gray-600 mb-8">Before reaching out, please check our FAQs. You might find the answer you're looking for there!</p>
+
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">How do I track my shipment?</h3>
+                        <p class="text-gray-700">You can easily track your shipment using the tracking number provided at the time of booking. Just enter it into the "Track Your Shipment" section on our homepage.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">What payment methods do you accept?</h3>
+                        <p class="text-gray-700">We accept a variety of payment methods, including major credit cards, mobile money (e.g., TNM Mpamba, Airtel Money), and bank transfers.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">How do I get a quote for my shipment?</h3>
+                        <p class="text-gray-700">You can get an instant quote by visiting our "Services" page and using our online quote calculator. You'll need to provide details about your shipment, including origin, destination, and package dimensions.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">What are your operating hours?</h3>
+                        <p class="text-gray-700">Our customer support team is available Monday to Friday, from 8:00 AM to 5:00 PM CAT, and Saturdays from 9:00 AM to 1:00 PM CAT.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">What should I do if my package is delayed or damaged?</h3>
+                        <p class="text-gray-700">Please contact our support team immediately using one of the methods below. Provide your tracking number and a detailed description of the issue.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Us Section -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-yellow-500 pb-2">Contact Us</h2>
+                <p class="text-gray-600 mb-8">Can't find what you're looking for? Our dedicated support team is ready to assist you.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-3">Phone</h3>
+                        <p class="text-gray-700">For immediate assistance, call us during business hours:</p>
+                        <p class="text-2xl font-bold text-blue-900 mt-2">+265 999 788 890</p>
+                        
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h3 class="text-xl font-semibold text-green-700 mb-3">Email</h3>
+                        <p class="text-gray-700">Send us an email anytime and we'll get back to you as soon as possible. Please allow up to 24 hours for a response.</p>
+                        <a href="mailto:support@swiftmove.mw" class="text-blue-600 hover:underline text-lg font-semibold mt-2 block">support@swiftmove.mw</a>
+                    </div>
+                    <div class="bg-yellow-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h3 class="text-xl font-semibold text-yellow-700 mb-3">Visit Us</h3>
+                        <p class="text-gray-700">If you're in Blantyre, you can visit our main office:</p>
+                        <p class="text-gray-800 font-medium mt-2">SwiftMove Logistics HQ</p>
+                        <p class="text-gray-800 font-medium">123 Transport Avenue</p>
+                        <p class="text-gray-800 font-medium">Blantyre, Southern Region, Malawi</p>
+                        <p class="text-gray-500 text-sm mt-2">Office hours: Mon-Fri, 8:00 AM - 6:00 PM CAT</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Send Message Form Section -->
+            <section>
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-yellow-500 pb-2">Send Us a Message</h2>
+                <p class="text-gray-600 mb-8">Prefer to write to us directly? Fill out the form below, and we'll get back to you shortly.</p>
+
+                <form class="space-y-6 p-6 border border-gray-200 rounded-lg shadow-md">
+                    <div>
+                        <label for="name" class="block text-lg font-medium text-gray-700 mb-2">Your Name:</label>
+                        <input type="text" id="name" name="name" class="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-lg font-medium text-gray-700 mb-2">Your Email:</label>
+                        <input type="email" id="email" name="email" class="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base" required>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-lg font-medium text-gray-700 mb-2">Subject:</label>
+                        <input type="text" id="subject" name="subject" class="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-lg font-medium text-gray-700 mb-2">Your Message:</label>
+                        <textarea id="message" name="message" rows="5" class="block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-md shadow-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-75">
+                        Send Message
+                    </button>
+                </form>
+            </section>
+
+            <p class="text-center text-gray-500 mt-12 text-sm">
+                We're committed to providing you with the best possible service. Your feedback helps us improve!
+            </p>
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('hidden');
+        }
+
+        // Optional: Add a simple form submission handler for demonstration
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // In a real application, you would send this data to a server
+            alert('Thank you for your message! We will get back to you shortly.');
+            this.reset(); // Clear the form
+        });
+    </script>
+</body>
+</html>
